@@ -27,6 +27,9 @@ minusBtn2.addEventListener('click', function(){
     updatePrice('price2',59, totalUnit);
     updateTotalPrice('subTotal',-59);
 })
+//remove items from cart 
+removeItem('cross1','cartItem1');
+removeItem('cross2','cartItem2');
 
 // functions
 function addUnit(id) {
@@ -59,4 +62,11 @@ function updateTotalPrice(id,single) {
     const updateTotalPrice = totalPrice + single ;
     document.getElementById(id).innerText = updateTotalPrice;
     document.getElementById('total').innerText = updateTotalPrice;
+}
+// remove item function
+function removeItem(crossID,itemID) {
+    const removeItem = document.getElementById(crossID);
+    removeItem.addEventListener('click',function () {
+        document.getElementById(itemID).style.display = 'none' ;
+    })
 }
